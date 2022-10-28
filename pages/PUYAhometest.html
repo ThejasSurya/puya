@@ -5,8 +5,10 @@
 			/*WEBPAGE IS PRESENTLY ONLY OPTIMIZED FOR DESKTOP; MOBILE OPTIMIZATION IS HOPEFULLY FORTHCOMING*/
 			body { margin: 0; padding: 0;}
 			
-			/*BODY STYLE + OPACITY ANIMATION*/
-			* {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline;}
+			/*BODY STYLE + OPACITY ANIMATION + SCROLL LOCK*/
+			* {overflow-y: clip; margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; -webkit-animation-name: scroll-lock; -webkit-animation-duration: 0s; animation-fill-mode: forwards; animation-delay: 3.5s;}
+				@-webkit-keyframes scroll-lock {from {overflow-y: clip;} to {overflow-y: initial;};}
+				@keyframes scroll-lock {from {overflow-y: clip;} to {overflow-y: initial;};}
 			#div {background-color: #7ed957; -webkit-animation-name: body; -webkit-animation-duration: 1s; animation-fill-mode: forwards; animation-delay: 3.5s; transition: 3s ease; display: block; padding-top: 0;}
 				@-webkit-keyframes body {from {background-color: #7ed957;} to {background-image: url('puyabg.svg'); background-attachment: fixed; background-size: 80%; 80%;}}
 				@keyframes body {from {background-color: #7ed957;} to {background-image: url('puyabg.svg'); background-attachment: fixed; background-size: 80%; 80%;}}
@@ -22,27 +24,27 @@
 					@font-face {font-family: "Archivo Narrow"; src: url("ArchivoNarrow-VariableFont_wght.ttf")}
 				
 			/*NAVBAR*/
-				#navbar {overflow: hidden; background-color: #008037; opacity: 1; z-index: 1; width: 100% ! important; opacity: 0;text-align: center; font-family: Inter-Regular; text-decoration: bold; font-size: 14px; position: sticky; position: -webkit-sticky; top: 0;}
+				#navbar {overflow: hidden ! important; background-color: #008037; opacity: 1; z-index: 1; width: 100% ! important; opacity: 0; text-align: center; font-family: Inter-Regular; text-decoration: bold; font-size: 14px; position: sticky; position: -webkit-sticky; top: 0;}
+				#navbar:hover {background-color: #008037; transition: 0.8s ease;}
 				#navbar a {float: left;display: block; color: #ffffff; text-align: center; padding: 16px 16px; text-decoration: none; font-size: 14x;}
 				#navbar a:hover {background-color: #ffffff; color: #008037; transition: 0.8s ease;}
-				#navbar a:active {text-decoration: i; transition: 0.8s ease;}
 				
 				/*NAVBAR SEARCHBAR*/
 					#navbar input[type=text] {float: right; padding: 6px; margin-top: 8px; margin-right: 10px; margin-bottom: 8px; border: 2px solid #c0c0c0; font-family: Archivo Narrow; font-size: 12px;}
 				/*NAVBAR ANIMATION*/
 					.navbaranimation {-webkit-animation-name: navbaranimation; -webkit-animation-duration: 1s; animation-fill-mode: forwards; animation-delay: 5.5s;}
-						@webkit-keyframes navbaranimation {from {opacity: 0;} to {opacity: 1.0;}}
-						@keyframes navbaranimation {from {opacity: 0;} to {opacity: 1.0;}}
+						@webkit-keyframes navbaranimation {from {opacity: 0;} to {opacity: 1.0;};}
+						@keyframes navbaranimation {from {opacity: 0;} to {opacity: 1.0;};}
 						
 			/*WINDOW EFFECT*/
 				/*INTRODUCTION WINDOW*/
 					 #homebackground {background-image: url('https://www.gannett-cdn.com/presto/2018/08/09/USAT/97270b2e-fec1-4eb7-a672-bd20325e5a75-GettyImages-865297750.jpg?crop=2307,1298,x0,y0&width=2307&height=1298&format=pjpg&auto=webp'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%; -webkit-animation-name: homebackground; -webkit-animation-duration: 1s; animation-fill-mode: forwards; animation-delay: 3.5s; opacity: 0; font-family: Archivo Narrow; color: #ffffff; text-align: center; padding: 0; padding-top: 0; margin: 0; z-index: -5;}					 
-						@-webkit-keyframes homebackground {from {opacity: 0;} to {opacity: 1.0}}
-						@keyframes homebackground {from {opacity: 0;} to {opacity: 1.0;}}
+						@-webkit-keyframes homebackground {from {opacity: 0;} to {opacity: 1.0;};}
+						@keyframes homebackground {from {opacity: 0;} to {opacity: 1.0;};}
 					/*INTRODUCTION WINDOW TEXTBOX*/
 						 .homebackground-translucenttext {background: rgba(0, 0, 0, 0.6); -moz-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.6);-webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.6); box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.6); margin: 2; padding: 2; -webkit-animation-name: homebackground-translucenttext-fadein; -webkit-animation-duration: 1s; animation-fill-mode: forwards; animation-delay: 4.5s; opacity: 0; color: #ffffff;}
-							@-webkit-keyframes homebackground-translucenttext-fadein {from {opacity: 0;} to {opacity: 1.0}}
-							@keyframes homebackground-translucenttext-fadein {from {opacity: 0;} to {opacity: 1.0}}
+							@-webkit-keyframes homebackground-translucenttext-fadein {from {opacity: 0;} to {opacity: 1.0;};}
+							@keyframes homebackground-translucenttext-fadein {from {opacity: 0;} to {opacity: 1.0;};}
 						/*BOUNCING ARROW*/
 							.homedownarrow {position: fixed; bottom: 45%; left: 50%;}
 								.bounce {-moz-animation: bounce 3s infinite; -webkit-animation: bounce 3s infinite; animation: bounce 3s infinite;}
@@ -52,9 +54,7 @@
 									
 				/*D I S R E G A R D; --LITTER INFORMATION WINDOW--; D I S R E G A R D*/
 					#litterinformationwindow {background-image: url('https://ichef.bbci.co.uk/news/976/cpsprodpb/13892/production/_118881008_plastic_gettyimages-1152932601.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 75%; z-index: 1; margin-left: 5; padding: 5;}				
-					/*ANIMATION*/
-						.reveal {opacity: 0; transition: 5s all ease;}
-							.reveal.visible {opacity: 1;}
+				
 							
 			/*WELCOME TO PUYA*/
 				.welcome {display: block; background-color: #ffffff; font-size: 125px; margin: 10; padding: 10; width: 1000px; vertical-align: middle; position: relative; opacity: 0;}
@@ -63,13 +63,14 @@
 				#loadercontainer {opacity: 1.0; -webkit-animation-name: loaderfadeaway; -webkit-animation-duration: 0.1s; animation-fill-mode: forwards; animation-delay: 3.5s;}
 					@-webkit-keyframes loaderfadeaway {from {opacity: 1.0;} to {opacity: 0;};}
 					@keyframes loaderfadeaway {from {opacity: 1.0;} to {opacity: 0;};}
-				#loader {position: absolute; position: fixed; left: 50%; top: 50%;z-index: -1; width: 150px;height: 150px;margin: -75px 0 0 -75px;border: 16px solid #c0c0c0; border-radius: 50%;border-top: 16px solid turquoise;border-right: 16px solid orange;border-bottom: 16px solid gold; width: 120px;height: 120px;-webkit-animation: spin 2s linear infinite;animation: spin 2s linear infinite;animation-timing-function: cubic-bezier(0.1, 0.7, 0.8, 0.1); z-index: -10;}
+					#loadercontainer.text {font-family: Baron Neue; font-size: 30px; color: #008037;}
+				#loader {position: absolute; position: fixed; left: 50%; top: 50%; z-index: -1; width: 150px; height: 150px; margin: -75px 0 0 -75px; border: 16px solid #008037; border-radius: 50%; border-top: 16px solid #008037; border-right: 16px solid #008037; border-bottom: 16px solid #7ed957; width: 120px; height: 120px;-webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite; animation-timing-function: cubic-bezier(0.1, 0.7, 0.8, 0.1);} 
 					@-webkit-keyframes spin {0% {-webkit-transform: rotate(0deg); } 100% {-webkit-transform: rotate(360deg); }}
 					@keyframes spin {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}
-				#loadermiddle {position: absolute; position: fixed; left: 50%; top: 50%; text-align: center; z-index: -10}
+				#loadermiddle {position: absolute; position: fixed; left: 50%; top: 50%; text-align: center; margin: auto; z-index: -10}
 				
 			/*INTRODUCTORY SLIDESHOW*/
-				#slideshow-container {opacity: 0; -webkit-animation-name: slideshowfadein; -webkit-animation-duration: 1s; animation-fill-mode: forwards; animation-delay: 3.5s; vertical-align: middle;}
+				#slideshow-container {opacity: 0; background-color: #ffffff; -webkit-animation-name: slideshowfadein; -webkit-animation-duration: 1s; animation-fill-mode: forwards; animation-delay: 3.5s; vertical-align: middle;}
 					@-webkit-keyframes slideshowfadein {from {opacity: 0;} to {opacity: 1.0;};}
 					@keyframes slideshowfadein {from {opacity: 0;} to {opacity: 1.0;};}
 				#slideshow {position: relative; max-width: 100%; height: 550px; padding: 10px; margin: auto;}
@@ -78,28 +79,30 @@
 					.slideshow-text {color: #ffffff; position: absolute; bottom: 0 ! important; width: 100%; text-align: center; background: rgba(0, 0, 0, 0.6); -moz-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.6);-webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.6); box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.6);}
 						.slideshow-text.header {font-family: Inter-Regular; font-size: 25px;}
 						.slideshow-text.paragraph {font-family: Bebas Neue; font-size: 15px;}
-					
-
-
+						
+			/*REVEAL ANIMATIONS*/
+				/*PUYA LOGO*/
+					.puyalogo {opacity: 0; transition: 5s all ease;}
+						.puyalogo.puyavisible {opacity: 1;}
 				
 
 		</style>
 		<!--JAVASCRIPT-->
+		
 			<!--JQUERY HOSTING-->
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 			<!--REVEAL ANIMATIONS-->
-				<!--INTRODUCTION WINDOW DISAPPEAR ANIMATION-->
-					
-				<!--LITTER INFORMATION WINDOW REVEAL ANIMATION-->
+				<!--PUYA LOGO-->
 					<script>
 						function reveal() {
-							var reveals = document.querySelectorAll(".reveal");
+							var reveals = document.querySelectorAll(".puyalogo");
 							for (var i = 0; i < reveals.length; i++) {
 							var windowHeight = window.innerHeight;
 							var elementTop = reveals[i].getBoundingClientRect().top;
 							var elementVisible = 10;
-							if (elementTop < windowHeight - elementVisible) {reveals[i].classList.add("visible");} 
-								else {reveals[i].classList.remove("visible");}}}
+							if (elementTop < windowHeight - elementVisible) {reveals[i].classList.add("puyavisible");} 
+								else {reveals[i].classList.remove("puyavisible");}}}
 						window.addEventListener("scroll", reveal);
 					</script>
 					
@@ -124,8 +127,8 @@
 <!--LOADER-->
 	<div id="loadercontainer">
 		<div id="loader"></div>
+			<img src="https://image.canva.com/HvWOimkSKBSfdD6xIzjanA%3D%3D/3izUgoxxSNEd3VR4aYTCZA%3D%3D.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH25PN7VSL%2F20221007%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221007T073900Z&X-Amz-Expires=43256&X-Amz-Signature=cdd2e63287ff82bb6db5766c75c37c3935038539cc7f3fec33148b8177382729&X-Amz-SignedHeaders=host&response-expires=Fri%2C%2007%20Oct%202022%2019%3A39%3A56%20GMT" width="50" height="50">
 		<div id="loadermiddle">
-			LOADING...
 		</div>
 	</div>
 <!--CONTENT-->
@@ -144,7 +147,7 @@
 			</div>	
 		
 		<!--NAVBAR-->
-			<div id="navbar" class="navbaranimation">
+			<div id="navbar" class="navbaranimation" style="position:sticky;-webkit-position:sticky;top:0;">
 				<div class="sticky">
 					<b>
 						<a class="active" href="file:///C:/Users/anson/Documents/travelhomepage.html">HOME</a>
@@ -183,7 +186,9 @@
 					</div>
 				</div>
 			</div>
-<span style="font-size:500px;"><br></span>
+<div class="puyalogo">
+<img src="https://pbs.twimg.com/media/EeD0wxdXYAAyTaJ.jpg">
+</div>
 </div>
 </body>
 </html>
